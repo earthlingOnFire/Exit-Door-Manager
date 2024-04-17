@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using UnityEngine;
+using BepInEx;
 using HarmonyLib;
 
 namespace ExitDoorManager;
@@ -7,9 +8,10 @@ namespace ExitDoorManager;
 public class Plugin : BaseUnityPlugin {	
   public const string PLUGIN_GUID = "com.earthlingOnFire.ExitDoorManager";
   public const string PLUGIN_NAME = "Exit Door Manager";
-  public const string PLUGIN_VERSION = "1.0.0";
+  public const string PLUGIN_VERSION = "1.0.1";
 
   private void Start() {
+    gameObject.hideFlags = HideFlags.HideAndDontSave;
     new Harmony(PLUGIN_GUID).PatchAll();
   }
 

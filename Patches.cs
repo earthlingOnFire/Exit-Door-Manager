@@ -102,7 +102,9 @@ public static class Patches {
     {from: "Level 7-1", to: "Level 7-2"} => ConfigManager.exit71.value,
     {from: "Level 7-2", to: "Level 7-3"} => ConfigManager.exit72.value,
     {from: "Level 7-3", to: "Level 7-4"} => ConfigManager.exit73.value,
+    {from: "Level 7-3", to: "Level 7-S"} => ConfigManager.exit73s.value,
     {from: "Level 7-4", to: "EarlyAccessEnd"} => ConfigManager.exit74.value,
+    {from: "Level 7-S", to: "Level 7-4"} => ConfigManager.exit7s.value,
     _ => null,
   };
   

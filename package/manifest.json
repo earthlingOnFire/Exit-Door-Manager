@@ -1,10 +1,10 @@
 {
     "name": "Exit_Door_Manager",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/earthlingOnFire/Exit-Door-Manager",
     "description": "Can change which level an exit door leads to.",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100",
-        "EternalsTeam-PluginConfigurator-1.8.4"
+        "EternalsTeam-PluginConfigurator-1.9.0"
     ]
 }

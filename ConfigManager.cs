@@ -48,6 +48,7 @@ public static class ConfigManager {
     "Level 7-2",
     "Level 7-3",
     "Level 7-4",
+    "Level 7-S",
     "EarlyAccessEnd",
     "CreditsMuseum2",
   };
@@ -96,7 +97,9 @@ public static class ConfigManager {
   public static StringListField exit71; 
   public static StringListField exit72; 
   public static StringListField exit73; 
+  public static StringListField exit73s; 
   public static StringListField exit74; 
+  public static StringListField exit7s; 
 
   public static PluginConfigurator config;
 
@@ -151,6 +154,8 @@ public static class ConfigManager {
     exit71 = new StringListField(config.rootPanel, "7-1 Exit", "exit71", Levels, "Level 7-2");
     exit72 = new StringListField(config.rootPanel, "7-2 Exit", "exit72", Levels, "Level 7-3");
     exit73 = new StringListField(config.rootPanel, "7-3 Exit", "exit73", Levels, "Level 7-4");
+    exit73s = new StringListField(config.rootPanel, "7-3 Secret Exit", "exit73s", Levels, "Level 7-S");
     exit74 = new StringListField(config.rootPanel, "7-4 Exit", "exit74", Levels, "EarlyAccessEnd");
+    exit7s = new StringListField(config.rootPanel, "7-S Exit", "exit7s", Levels, "Level 7-4");
   }
 }

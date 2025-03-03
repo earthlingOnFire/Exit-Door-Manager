@@ -49,8 +49,14 @@ public static class ConfigManager {
     "Level 7-3",
     "Level 7-4",
     "Level 7-S",
+    "Level 0-E",
+    "Level 1-E",
+    "Main Menu",
+    "The Cyber Grind",
+    "Sandbox",
+    "Credits Museum",
     "EarlyAccessEnd",
-    "CreditsMuseum2",
+    "Close Game",
   };
 
   public static StringListField exit01; 
@@ -100,6 +106,8 @@ public static class ConfigManager {
   public static StringListField exit73s; 
   public static StringListField exit74; 
   public static StringListField exit7s; 
+  public static StringListField exit0e; 
+  public static StringListField exit1e; 
 
   public static PluginConfigurator config;
 
@@ -157,5 +165,7 @@ public static class ConfigManager {
     exit73s = new StringListField(config.rootPanel, "7-3 Secret Exit", "exit73s", Levels, "Level 7-S");
     exit74 = new StringListField(config.rootPanel, "7-4 Exit", "exit74", Levels, "EarlyAccessEnd");
     exit7s = new StringListField(config.rootPanel, "7-S Exit", "exit7s", Levels, "Level 7-4");
+    exit0e = new StringListField(config.rootPanel, "0-E Exit", "exit0e", Levels, "Level 1-E");
+    exit1e = new StringListField(config.rootPanel, "1-E Exit", "exit1e", Levels, "Main Menu");
   }
 }

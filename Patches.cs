@@ -1,5 +1,7 @@
+using UnityEngine;
 using HarmonyLib;
 using System;
+using Random = System.Random;
 
 namespace ExitDoorManager;
 
@@ -16,18 +18,37 @@ public static class Patches {
 
     if (nextScene == null || nextScene == sceneName) return true;
 
-    if (nextScene == "Random Scene") {
-      string[] scenes = Array.FindAll(ConfigManager.Levels, lvl => !lvl.StartsWith("Random"));
-      int randomScene = rand.Next(0, scenes.Length);
-      nextScene = scenes[randomScene];
-    }
-    else if (nextScene == "Random Level") {
-      string[] levels = Array.FindAll(ConfigManager.Levels, lvl => lvl.StartsWith("Level"));
-      int randomLevel = rand.Next(0, levels.Length);
-      nextScene = levels[randomLevel];
+    // hack to make sure you can actually go back to the main menu from 1-E
+    if (SceneHelper.CurrentScene == "Level 1-E" && GameObject.Find("Canvas/PauseMenu") != null) return true;
+
+    switch (nextScene) {
+      case "Random Scene":
+        string[] scenes = Array.FindAll(ConfigManager.Levels, lvl => 
+            !lvl.StartsWith("Random") && !lvl.StartsWith("Close")
+        );
+        int randomScene = rand.Next(0, scenes.Length);
+        nextScene = scenes[randomScene];
+        break;
+      case "Random Level":
+        string[] levels = Array.FindAll(ConfigManager.Levels, lvl => lvl.StartsWith("Level"));
+        int randomLevel = rand.Next(0, levels.Length);
+        nextScene = levels[randomLevel];
+        break;
+      case "The Cyber Grind":
+        nextScene = "Endless";
+        break;
+      case "Sandbox":
+        nextScene = "uk_construct";
+        break;
+      case "Credits Museum":
+        nextScene = "CreditsMuseum2";
+        break;
+      case "Close Game":
+        Application.Quit();
+        return false;
     }
 
-    MonoSingleton<SceneHelper>.Instance.StartCoroutine(MonoSingleton<SceneHelper>.Instance.LoadSceneAsync(nextScene, noBlocker));
+    SceneHelper.Instance.StartCoroutine(MonoSingleton<SceneHelper>.Instance.LoadSceneAsync(nextScene, noBlocker));
     return false;
   }
 
@@ -105,6 +126,8 @@ public static class Patches {
     {from: "Level 7-3", to: "Level 7-S"} => ConfigManager.exit73s.value,
     {from: "Level 7-4", to: "EarlyAccessEnd"} => ConfigManager.exit74.value,
     {from: "Level 7-S", to: "Level 7-4"} => ConfigManager.exit7s.value,
+    {from: "Level 0-E", to: "Level 1-E"} => ConfigManager.exit0e.value,
+    {from: "Level 1-E", to: "Main Menu"} => ConfigManager.exit1e.value,
     _ => null,
   };
   

@@ -1,6 +1,6 @@
 {
     "name": "Exit_Door_Manager",
-    "version_number": "1.0.2",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/earthlingOnFire/Exit-Door-Manager",
     "description": "Can change which level an exit door leads to.",
     "dependencies": [

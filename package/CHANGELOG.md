@@ -1,4 +1,10 @@
 <details>
+<summary>Changelog 1.1.0</summary>
+
+- Added level randomizer.
+</details>
+
+<details>
 <summary>Changelog 1.0.2</summary>
 
 - Updated to Patch 16.

@@ -51,6 +51,10 @@ public static class ConfigManager {
     "Level 7-3",
     "Level 7-4",
     "Level 7-S",
+    "Level 8-1",
+    "Level 8-2",
+    "Level 8-3",
+    "Level 8-4",
     "Level 0-E",
     "Level 1-E",
     "Main Menu",
@@ -107,6 +111,10 @@ public static class ConfigManager {
   public static PluginConfig.API.Fields.StringListField exit73; 
   public static PluginConfig.API.Fields.StringListField exit73s; 
   public static PluginConfig.API.Fields.StringListField exit74; 
+  public static PluginConfig.API.Fields.StringListField exit81; 
+  public static PluginConfig.API.Fields.StringListField exit82; 
+  public static PluginConfig.API.Fields.StringListField exit83; 
+  public static PluginConfig.API.Fields.StringListField exit84; 
   public static PluginConfig.API.Fields.StringListField exit7s; 
   public static PluginConfig.API.Fields.StringListField exit0e; 
   public static PluginConfig.API.Fields.StringListField exit1e; 
@@ -211,8 +219,12 @@ public static class ConfigManager {
     exit72 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-2 Exit", "exit72", Levels, "Level 7-3");
     exit73 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-3 Exit", "exit73", Levels, "Level 7-4");
     exit73s = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-3 Secret Exit", "exit73s", Levels, "Level 7-S");
-    exit74 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-4 Exit", "exit74", Levels, "EarlyAccessEnd");
+    exit74 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-4 Exit", "exit74", Levels, "Level 8-1");
     exit7s = new PluginConfig.API.Fields.StringListField(config.rootPanel, "7-S Exit", "exit7s", Levels, "Level 7-4");
+    exit81 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "8-1 Exit", "exit81", Levels, "Level 8-2");
+    exit82 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "8-2 Exit", "exit82", Levels, "Level 8-3");
+    exit83 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "8-3 Exit", "exit83", Levels, "Level 8-4");
+    exit84 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "8-4 Exit", "exit84", Levels, "EarlyAccessEnd");
     exit0e = new PluginConfig.API.Fields.StringListField(config.rootPanel, "0-E Exit", "exit0e", Levels, "Level 1-E");
     exit1e = new PluginConfig.API.Fields.StringListField(config.rootPanel, "1-E Exit", "exit1e", Levels, "Main Menu");
   }

@@ -57,6 +57,7 @@ public static class ConfigManager {
     "Level 8-4",
     "Level 0-E",
     "Level 1-E",
+    "Intro",
     "Main Menu",
     "The Cyber Grind",
     "Sandbox",
@@ -65,6 +66,8 @@ public static class ConfigManager {
     "Close Game",
   };
 
+  public static PluginConfig.API.Fields.StringListField postintro;
+  public static PluginConfig.API.Fields.StringListField intro;
   public static PluginConfig.API.Fields.StringListField exit01; 
   public static PluginConfig.API.Fields.StringListField exit02; 
   public static PluginConfig.API.Fields.StringListField exit02s; 
@@ -133,7 +136,7 @@ public static class ConfigManager {
 
   public static StringListField[] GetExits() {
     ConfigField[] exitFields = Array.FindAll(config.rootPanel.GetAllFields(), field => (
-          field.guid.StartsWith("exit")
+          field.guid.StartsWith("exit") || field.guid.EndsWith("intro")
     ));
     StringListField[] exits = new StringListField[exitFields.Length];
 
@@ -174,6 +177,8 @@ public static class ConfigManager {
     finalScene = new StringListField(randoSettings, "Final Scene", "randoFinalScene",
         Array.FindAll(Levels, l => !l.StartsWith("Random")), "EarlyAccessEnd");
 
+    intro = new PluginConfig.API.Fields.StringListField(config.rootPanel, "Initial Scene", "intro", Levels, "Intro");
+    postintro = new PluginConfig.API.Fields.StringListField(config.rootPanel, "Post-Intro", "postintro", Levels, "Main Menu");
     exit01 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "0-1 Exit", "exit01", Levels, "Level 0-2");
     exit02 = new PluginConfig.API.Fields.StringListField(config.rootPanel, "0-2 Exit", "exit02", Levels, "Level 0-3");
     exit02s = new PluginConfig.API.Fields.StringListField(config.rootPanel, "0-2 Secret Exit", "exit02s", Levels, "Level 0-S");

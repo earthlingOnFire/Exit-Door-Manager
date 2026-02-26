@@ -79,6 +79,8 @@ public static class Patches {
   }
 
   private static string GetNextScene(Exit exit) => exit switch {
+    {from: "Bootstrap", to: "Intro"} => ConfigManager.intro.value,
+    {from: "Intro", to: "Main Menu"} => ConfigManager.postintro.value,
     {from: "Level 0-1", to: "Level 0-2"} => ConfigManager.exit01.value,
     {from: "Level 0-2", to: "Level 0-3"} => ConfigManager.exit02.value,
     {from: "Level 0-2", to: "Level 0-S"} => ConfigManager.exit02s.value,

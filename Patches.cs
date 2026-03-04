@@ -48,7 +48,7 @@ public static class Patches {
         return false;
     }
 
-    SceneHelper.Instance.StartCoroutine(MonoSingleton<SceneHelper>.Instance.LoadSceneAsync(nextScene, noBlocker));
+		SceneHelper.LoadSceneAsync(nextScene, noBlocker);
     return false;
   }
 
@@ -64,7 +64,8 @@ public static class Patches {
       return true;
 		}
 
-    MonoSingleton<SceneHelper>.Instance.StartCoroutine(MonoSingleton<SceneHelper>.Instance.LoadSceneAsync(sceneName));
+		SceneHelper.LoadSceneAsync(sceneName);
+
     return false;
   }
 

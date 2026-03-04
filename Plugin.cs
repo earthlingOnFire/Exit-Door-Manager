@@ -9,7 +9,7 @@ namespace ExitDoorManager;
 public class Plugin : BaseUnityPlugin {	
   public const string PLUGIN_GUID = "com.earthlingOnFire.ExitDoorManager";
   public const string PLUGIN_NAME = "Exit Door Manager";
-  public const string PLUGIN_VERSION = "1.2.0";
+  public const string PLUGIN_VERSION = "1.2.1";
   public static ManualLogSource logger;
 
   private void Awake() {
